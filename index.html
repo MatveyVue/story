@@ -8,19 +8,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Story</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure button is centered even on smaller screens */
+            margin: 0;
+        }
+        button {
+            width: 50%;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-<center>
-<button onclick="shareStory()"  style="width: 50%; height: 50px;">Story</button>
-</center>
-<script lang="ts">
-shareStory('https://i.postimg.cc/qBsh7J0M/IMG-4891.png', {
-  text: '@hatewhsxg and hate users',
-  widgetLink: {
-    url: 'https://t.me/hatewhsxg',
-    name: '@hatewhsxg',
-  },
-});
-</script>
+    <button onclick="shareStory()">Story</button>
+
+    <script>
+      function shareStory() {
+        const Tg = window.Telegram.WebApp; // Get Telegram Web App object
+
+        Tg.shareStory({
+          url: 'https://i.postimg.cc/qBsh7J0M/IMG-4891.png', // Image URL
+          text: '@hatewhsxg and hate users', // Text to be shared
+          widgetLink: { // Link to the widget (bot)
+              url: 'https://t.me/hatewhsxg',
+              name: '@hatewhsxg',
+          }
+        });
+      }
+    </script>
 </body>
 </html>
