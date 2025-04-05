@@ -2,42 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://telegram.org/js/telegram-web-app.js?2"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Story</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Ensure button is centered even on smaller screens */
-            margin: 0;
-        }
-        button {
-            width: 50%;
-            height: 50px;
-        }
-    </style>
 </head>
 <body>
-    <button onclick="shareStory()">Story</button>
-
-    <script>
-      function shareStory() {
-        const Tg = window.Telegram.WebApp; // Get Telegram Web App object
-
-        Tg.shareStory({
-          url: 'https://i.postimg.cc/qBsh7J0M/IMG-4891.png', // Image URL
-          text: '@hatewhsxg and hate users', // Text to be shared
-          widgetLink: { // Link to the widget (bot)
-              url: 'https://t.me/hatewhsxg',
-              name: '@hatewhsxg',
-          }
-        });
-      }
-    </script>
+<center>
+    <li><a href="javascript:Telegram.WebApp.shareToStory('https://telegra.ph/file/5583ac37c90979f052b7b.png',{text:'Test caption'});">Share picture to story</a> (with caption)</li>
+</center>
 </body>
 </html>
